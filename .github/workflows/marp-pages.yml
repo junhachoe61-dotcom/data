@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Marp Build (Convert to HTML)
-        uses: marp-team/marp-cli-action@v2
+        uses: marp-team/action-marp-cli@v2
         with:
           input: docs/presentation.md
           output: public/index.html
