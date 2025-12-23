@@ -15,12 +15,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Marp Build (Convert to HTML)
-        uses: marp-team/action-marp-cli@v2
-        with:
-          input: docs/presentation.md
-          output: public/index.html
-          theme: gaia
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Build Presentation
+        run: marp docs/presentation.md -o public/index.html --theme gaia
 
       - name: Upload metadata
         uses: actions/upload-artifact@v4
